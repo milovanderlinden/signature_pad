@@ -14,14 +14,14 @@
   "module": "dist/signature_pad.js",
   "types": "dist/types/signature_pad.d.ts",
   "scripts": {
-    "build": "yarn run lint && yarn run clean && rollup --config && yarn run emit-types && yarn run update-docs",
-    "clean": "yarn run del dist",
-    "emit-types": "mkdir -p dist/types && yarn run tsc src/signature_pad.ts --lib DOM,ES2015 --declaration --declarationDir dist/types --emitDeclarationOnly",
+    "build": "npm run lint && npm run clean && rollup --config && npm run emit-types && npm run update-docs",
+    "clean": "rm -Rf dist",
+    "emit-types": "mkdir -p dist/types && tsc src/signature_pad.ts --declaration --declarationDir dist/types --emitDeclarationOnly",
     "format": "prettier --write '{src,tests}/**/*.{js,ts}'",
     "lint": "eslint '{src,tests}/**/*.ts'",
-    "prepublishOnly": "yarn run build",
+    "prepublishOnly": "npm run build",
     "serve": "serve -l 9000 docs",
-    "start": "yarn run build && yarn run serve",
+    "start": "npm run build && npm run serve",
     "test": "jest --coverage",
     "update-docs": "cp dist/signature_pad.umd.js docs/js/"
   },
@@ -63,8 +63,8 @@
   },
   "lint-staged": {
     "*.ts": [
-      "yarn run prettier",
-      "yarn run lint"
+      "npm run prettier",
+      "npm run lint"
     ]
   },
   "jest": {

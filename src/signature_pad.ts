@@ -148,7 +148,7 @@ export default class SignaturePad {
   public on(): void {
     // Disable panning/zooming when touching canvas element
     this.canvas.style.touchAction = 'none';
-    this.canvas.style.msTouchAction = 'none';
+    //this.canvas.style.msTouchAction = 'none';
 
     if (window.PointerEvent) {
       this._handlePointerEvents();
@@ -164,7 +164,7 @@ export default class SignaturePad {
   public off(): void {
     // Enable panning/zooming when touching canvas element
     this.canvas.style.touchAction = 'auto';
-    this.canvas.style.msTouchAction = 'auto';
+    //this.canvas.style.msTouchAction = 'auto';
 
     this.canvas.removeEventListener('pointerdown', this._handleMouseDown);
     this.canvas.removeEventListener('pointermove', this._handleMouseMove);
